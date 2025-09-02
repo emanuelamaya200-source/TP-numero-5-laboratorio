@@ -1,21 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package trabajon5;
 
-/**
- *
- * @author teito
- */
-public class Directorio {
+//Atributos
+public class Contacto {
+
     private int dni;
-    private String nombre;        
+    private String nombre;
     private String apellido;
     private String ciudad;
     private String direccion;
+//Constructor
 
-    public Directorio(int dni, String nombre, String apellido, String ciudad, String direccion) {
+    public Contacto(int dni, String nombre, String apellido, String ciudad, String direccion) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -23,6 +18,7 @@ public class Directorio {
         this.direccion = direccion;
     }
 
+    //Getters y setters 
     public int getDni() {
         return dni;
     }
@@ -63,9 +59,10 @@ public class Directorio {
         this.direccion = direccion;
     }
 
+    //toString
     @Override
     public String toString() {
-        return "-Directorio telefonico-" + "DNI: " + dni + " Nombre: " + nombre + " Apellido=" + apellido + " Ciudad=" + ciudad + " Direccion=" + direccion ;
+        return "-Directorio telefonico-" + "DNI: " + dni + " Nombre: " + nombre + " Apellido=" + apellido + " Ciudad=" + ciudad + " Direccion=" + direccion;
     }
     //final
 }
