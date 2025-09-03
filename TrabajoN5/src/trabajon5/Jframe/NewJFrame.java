@@ -4,6 +4,13 @@
  */
 package trabajon5.Jframe;
 
+import trabajon5.Jframe.Ciudades.AgregarCiudad;
+import trabajon5.Jframe.Cliente.AgregarCliente;
+import trabajon5.Jframe.Cliente.BorrarCliente;
+import trabajon5.Jframe.Cliente.BuscarCliente;
+import trabajon5.Jframe.Directorio.BuscarClientePorCiudad;
+import trabajon5.Jframe.Directorio.BuscarTelPorApellido;
+
 /**
  *
  * @author Ema
@@ -15,6 +22,7 @@ public class NewJFrame extends javax.swing.JFrame {
      */
     public NewJFrame() {
         initComponents();
+        setLocationRelativeTo(this);
     }
 
     /**
@@ -55,11 +63,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 644, Short.MAX_VALUE)
+            .addGap(0, 836, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 419, Short.MAX_VALUE)
+            .addGap(0, 627, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Clientes");
@@ -73,9 +81,19 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu1.add(jMenuItem3);
 
         jMenuItem5.setText("Buscar cliente");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
         jMenuItem6.setText("Borrar cliente");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem6);
 
         jMenuBar1.add(jMenu1);
@@ -83,9 +101,19 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu2.setText("Directorio");
 
         jMenuItem4.setText("Buscar clientes por ciudad");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jMenuItem7.setText("Buscar telefono por apellido");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem7);
 
         jMenuBar1.add(jMenu2);
@@ -93,6 +121,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu4.setText("Ciudades");
 
         jMenuItem8.setText("Agregar ciudad");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem8);
 
         jMenuBar1.add(jMenu4);
@@ -132,12 +165,44 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+        AgregarCliente internalCliente1 = new AgregarCliente();
+        jDesktopPane1.add(internalCliente1);
+        internalCliente1.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        AgregarCiudad internalCiudad = new AgregarCiudad();
+        jDesktopPane1.add(internalCiudad);
+        internalCiudad.setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        BuscarCliente internalCliente2 = new BuscarCliente();
+        jDesktopPane1.add(internalCliente2);
+        internalCliente2.setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+BorrarCliente internalBorrarCliente = new BorrarCliente();
+jDesktopPane1.add(internalBorrarCliente);
+internalBorrarCliente.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        BuscarClientePorCiudad internalBuscarClientePorCiudad = new BuscarClientePorCiudad();
+        jDesktopPane1.add(internalBuscarClientePorCiudad);
+        internalBuscarClientePorCiudad.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        BuscarTelPorApellido internaBuscarTelPorApellidoApellido = new BuscarTelPorApellido();
+        jDesktopPane1.add(internaBuscarTelPorApellidoApellido);
+        internaBuscarTelPorApellidoApellido.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments
