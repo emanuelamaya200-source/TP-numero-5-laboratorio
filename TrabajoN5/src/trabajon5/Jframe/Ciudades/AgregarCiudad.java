@@ -2,6 +2,7 @@ package trabajon5.Jframe.Ciudades;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import trabajon5.Ciudad;
 import trabajon5.Jframe.NewJFrame;
 
 public class AgregarCiudad extends javax.swing.JInternalFrame {
@@ -27,6 +28,12 @@ public class AgregarCiudad extends javax.swing.JInternalFrame {
         jLabel1.setText("Agregar Ciudad");
 
         jLabel2.setText("Nombre Ciudad:");
+
+        txt_NomCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_NomCiudadActionPerformed(evt);
+            }
+        });
 
         btn_SalirAgrCiudad.setText("Salir");
         btn_SalirAgrCiudad.addActionListener(new java.awt.event.ActionListener() {
@@ -86,16 +93,21 @@ public class AgregarCiudad extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btn_SalirAgrCiudadActionPerformed
 
     private void btn_GuardarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarCiudadActionPerformed
-    
-        System.out.println(txt_NomCiudad.getAccessibleContext());
-    
-        String ciudad = txt_NomCiudad.getText();
+       
+        //saco el texto escrito en el cuadrado en una variable
+        Ciudad laciudad = new Ciudad(txt_NomCiudad.getText());       
+                
+        //agrego una nueva ciudad
+        NewJFrame.ciudades.add(laciudad);
         
-        NewJFrame.ciudades.add(ciudad);
-     
+        //muestro mensaje de agregado
         JOptionPane.showMessageDialog(rootPane, "agregado");
         
     }//GEN-LAST:event_btn_GuardarCiudadActionPerformed
+
+    private void txt_NomCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_NomCiudadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_NomCiudadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

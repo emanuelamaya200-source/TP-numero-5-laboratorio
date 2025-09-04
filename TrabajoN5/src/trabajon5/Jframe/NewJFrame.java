@@ -7,6 +7,9 @@ package trabajon5.Jframe;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import javax.swing.ComboBoxModel;
+import javax.swing.JComboBox;
+import trabajon5.Ciudad;
 import trabajon5.Jframe.Ciudades.AgregarCiudad;
 import trabajon5.Jframe.Cliente.AgregarCliente;
 import trabajon5.Jframe.Cliente.BorrarCliente;
@@ -31,10 +34,10 @@ public class NewJFrame extends javax.swing.JFrame {
     //codigo hecho a mano
     
     //HashSet
-    public static HashSet<String>ciudades = new HashSet<>();
+    public static HashSet<Ciudad>ciudades = new HashSet<>();
     
     //Map
-    Map<String, String> Personas = new HashMap<>();
+    public static Map<String, String> Personas = new HashMap<>();
     
     
     
@@ -181,6 +184,22 @@ public class NewJFrame extends javax.swing.JFrame {
         AgregarCliente internalCliente1 = new AgregarCliente();
         jDesktopPane1.add(internalCliente1);
         internalCliente1.setVisible(true);
+        
+        
+        
+                
+      //el jcombobox es una lista de Strigs, se puede agregar de a uno o todos juntos.  
+      JComboBox<String>ciudads = new JComboBox<>();
+      
+      //a cada item del jcombo se le pone las ciudades que hay. con add item
+        for (Ciudad object : NewJFrame.ciudades) {
+           
+           ciudads.addItem(object.getNombre());
+        }
+        
+       //pongo el jcombobox elegido
+        AgregarCliente.jComboBox1.setModel(ciudads.getModel());
+        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed

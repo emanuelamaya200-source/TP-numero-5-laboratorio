@@ -1,6 +1,7 @@
 package trabajon5.Jframe.Cliente;
 
 import javax.swing.JComboBox;
+import trabajon5.Ciudad;
 import trabajon5.Jframe.NewJFrame;
 
 public class AgregarCliente extends javax.swing.JInternalFrame {
@@ -137,12 +138,9 @@ public class AgregarCliente extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSeparator2)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSeparator3)
-                        .addContainerGap())))
+                    .addComponent(jSeparator2)
+                    .addComponent(jSeparator3))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(99, Short.MAX_VALUE)
                 .addComponent(jButton1)
@@ -196,16 +194,7 @@ public class AgregarCliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        
-      JComboBox<String>ciudads = new JComboBox<>();
-      
-        for (String auxiliar : NewJFrame.ciudades) {                        
-            
-        }
-      
-      
-        evt.setSource(ERROR);
-        
+
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -236,7 +225,7 @@ public class AgregarCliente extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public static javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
