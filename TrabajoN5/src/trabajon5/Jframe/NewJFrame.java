@@ -4,6 +4,7 @@
  */
 package trabajon5.Jframe;
 
+import java.util.HashSet;
 import trabajon5.Jframe.Ciudades.AgregarCiudad;
 import trabajon5.Jframe.Cliente.AgregarCliente;
 import trabajon5.Jframe.Cliente.BorrarCliente;
@@ -24,7 +25,12 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
     }
-
+    
+    //codigo hecho a mano
+    HashSet<String>ciudades = new HashSet<>();
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

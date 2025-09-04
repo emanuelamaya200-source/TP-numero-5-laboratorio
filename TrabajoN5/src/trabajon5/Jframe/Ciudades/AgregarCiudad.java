@@ -73,7 +73,7 @@ public class AgregarCiudad extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_SalirAgrCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirAgrCiudadActionPerformed
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_btn_SalirAgrCiudadActionPerformed
 
 
