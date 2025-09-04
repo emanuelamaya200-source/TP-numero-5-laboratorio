@@ -1,5 +1,9 @@
 package trabajon5.Jframe.Ciudades;
 
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import trabajon5.Jframe.NewJFrame;
+
 public class AgregarCiudad extends javax.swing.JInternalFrame {
 
     public AgregarCiudad() {
@@ -32,6 +36,11 @@ public class AgregarCiudad extends javax.swing.JInternalFrame {
         });
 
         btn_GuardarCiudad.setText("Guardar");
+        btn_GuardarCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_GuardarCiudadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,6 +84,18 @@ public class AgregarCiudad extends javax.swing.JInternalFrame {
     private void btn_SalirAgrCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirAgrCiudadActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btn_SalirAgrCiudadActionPerformed
+
+    private void btn_GuardarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarCiudadActionPerformed
+    
+        System.out.println(txt_NomCiudad.getAccessibleContext());
+    
+        String ciudad = txt_NomCiudad.getText();
+        
+        NewJFrame.ciudades.add(ciudad);
+     
+        JOptionPane.showMessageDialog(rootPane, "agregado");
+        
+    }//GEN-LAST:event_btn_GuardarCiudadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

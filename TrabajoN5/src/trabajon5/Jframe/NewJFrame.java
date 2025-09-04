@@ -27,7 +27,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     
     //codigo hecho a mano
-    HashSet<String>ciudades = new HashSet<>();
+    public static HashSet<String>ciudades = new HashSet<>();
     
     
     
