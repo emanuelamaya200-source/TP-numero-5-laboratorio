@@ -1,5 +1,8 @@
 package trabajon5.Jframe.Cliente;
 
+import javax.swing.JComboBox;
+import trabajon5.Jframe.NewJFrame;
+
 public class AgregarCliente extends javax.swing.JInternalFrame {
 
     public AgregarCliente() {
@@ -193,7 +196,16 @@ public class AgregarCliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        
+      JComboBox<String>ciudads = new JComboBox<>();
+      
+        for (String auxiliar : NewJFrame.ciudades) {                        
+            
+        }
+      
+      
+        evt.setSource(ERROR);
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

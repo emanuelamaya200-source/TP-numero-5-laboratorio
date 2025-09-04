@@ -4,7 +4,9 @@
  */
 package trabajon5.Jframe;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import trabajon5.Jframe.Ciudades.AgregarCiudad;
 import trabajon5.Jframe.Cliente.AgregarCliente;
 import trabajon5.Jframe.Cliente.BorrarCliente;
@@ -27,7 +29,12 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     
     //codigo hecho a mano
+    
+    //HashSet
     public static HashSet<String>ciudades = new HashSet<>();
+    
+    //Map
+    Map<String, String> Personas = new HashMap<>();
     
     
     

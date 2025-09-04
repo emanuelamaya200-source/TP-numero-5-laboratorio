@@ -11,16 +11,16 @@ public class DirectorioTelefonico {
     
     //Agregar contacto 
     
-     public boolean agregarContacto(Long telefono, Contacto c) {
-     
-         if (telefono == null || c == null) return false;
-        if (directorio.containsKey(telefono)) return false;
-        directorio.put(telefono, c);
-        if (c.getCiudad() != null)   ciudad.add(c.getCiudad());
-        if (c.getApellido() != null) apellido.add(c.getApellido());
-        return true;
-         
-     }
+//     public boolean agregarContacto(Long telefono, Contacto c) {
+//     
+//         if (telefono == null || c == null) return false;
+//        if (directorio.containsKey(telefono)) return false;
+//        directorio.put(telefono, c);
+//        if (c.getCiudad() != null)   ciudad.add(c.getCiudad());
+//        if (c.getApellido() != null) apellido.add(c.getApellido());
+//        return true;
+//         
+//     }
      
      // Buscar por Telefono
      
@@ -40,10 +40,10 @@ public class DirectorioTelefonico {
  
      // Borrar por teléfono
     
-    public boolean borrarContacto(Long telefono) {
-        Contacto borrado = directorio.remove(telefono);
-        if (borrado == null) return false;
-
-     
+//    public boolean borrarContacto(Long telefono) {
+//        Contacto borrado = directorio.remove(telefono);
+//        if (borrado == null) return false;
+//
+//     
+//}
 }
-
