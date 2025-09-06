@@ -22,7 +22,7 @@ public class DirectorioTelefonico {
          if (telefono == null || c == null) return false;
         if (directorio.containsKey(telefono)) return false;
         directorio.put(telefono, c);
-        if (c.getCiudad() != null)   ciudades.add(c.getCiudad());
+        if (c.getCiudad() != null)   ciudades.add(c.getCiudad()); 
         if (c.getApellido() != null) apellidos.add(c.getApellido());
         return true;
          

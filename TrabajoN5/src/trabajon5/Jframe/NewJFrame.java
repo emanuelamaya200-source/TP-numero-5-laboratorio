@@ -10,6 +10,8 @@ import java.util.Map;
 import javax.swing.ComboBoxModel;
 import javax.swing.JComboBox;
 import trabajon5.Ciudad;
+import trabajon5.Contacto;
+import trabajon5.DirectorioTelefonico;
 import trabajon5.Jframe.Ciudades.AgregarCiudad;
 import trabajon5.Jframe.Cliente.AgregarCliente;
 import trabajon5.Jframe.Cliente.BorrarCliente;
@@ -23,6 +25,7 @@ import trabajon5.Jframe.Directorio.BuscarTelPorApellido;
  */
 public class NewJFrame extends javax.swing.JFrame {
 
+    public static final DirectorioTelefonico DIRECTORIO = new DirectorioTelefonico();
     /**
      * Creates new form NewJFrame
      */
@@ -198,7 +201,7 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         
        //pongo el jcombobox elegido
-        AgregarCliente.jComboBox1.setModel(ciudads.getModel());
+        AgregarCliente.cmbCiudad.setModel(ciudads.getModel());
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
@@ -289,4 +292,7 @@ internalBorrarCliente.setVisible(true);
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
-}
+
+    
+    }
+
