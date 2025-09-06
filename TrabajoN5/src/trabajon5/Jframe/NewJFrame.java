@@ -42,6 +42,9 @@ public class NewJFrame extends javax.swing.JFrame {
     //Map
     public static Map<String, String> Personas = new HashMap<>();
     
+    //Tablas (van como Matriz String[][])
+    public static String[][]Tablas;
+    
     
     
     /**
@@ -219,6 +222,7 @@ public class NewJFrame extends javax.swing.JFrame {
         BuscarCliente internalCliente2 = new BuscarCliente();
         jDesktopPane1.add(internalCliente2);
         internalCliente2.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
