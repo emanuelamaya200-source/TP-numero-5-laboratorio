@@ -1,5 +1,7 @@
 package trabajon5.Jframe.Cliente;
 
+import java.awt.event.ActionEvent;
+
 public class BorrarCliente extends javax.swing.JInternalFrame {
 
     public BorrarCliente() {
@@ -12,7 +14,7 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        CuadroDniBuscar = new javax.swing.JTextField();
+        CuadroDniBus = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -26,14 +28,9 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("DNI:");
 
-        CuadroDniBuscar.addActionListener(new java.awt.event.ActionListener() {
+        CuadroDniBus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CuadroDniBuscarActionPerformed(evt);
-            }
-        });
-        CuadroDniBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                CuadroDniBuscarKeyPressed(evt);
+                CuadroDniBusActionPerformed(evt);
             }
         });
 
@@ -83,7 +80,7 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(CuadroDniBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)))
+                        .addComponent(CuadroDniBus, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -108,7 +105,7 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(CuadroDniBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CuadroDniBus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(40, 40, 40)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -134,13 +131,13 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
-    private void CuadroDniBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CuadroDniBuscarKeyPressed
-       
-    }//GEN-LAST:event_CuadroDniBuscarKeyPressed
+    private void CuadroDniBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuadroDniBusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CuadroDniBusActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CuadroDniBuscar;
+    private javax.swing.JTextField CuadroDniBus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

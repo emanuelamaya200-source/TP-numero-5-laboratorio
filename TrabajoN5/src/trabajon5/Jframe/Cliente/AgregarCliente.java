@@ -1,10 +1,12 @@
 package trabajon5.Jframe.Cliente;
 
+import java.util.Map;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import trabajon5.Ciudad;
 import trabajon5.Contacto;
 import trabajon5.Jframe.NewJFrame;
+import trabajon5.Persona;
 
 
 public class AgregarCliente extends javax.swing.JInternalFrame {
@@ -236,6 +238,12 @@ public class AgregarCliente extends javax.swing.JInternalFrame {
     
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
+             
+//---------------------------------------------------
+//----- corraborar si los campos estan vacios -------
+//---------------------------------------------------            
+
 try {
   
     String dniTxt    = txtDni.getText().trim();
@@ -278,6 +286,29 @@ JOptionPane.showMessageDialog(this, "Contacto guardado:");
 } catch (NumberFormatException ex) {
     JOptionPane.showMessageDialog(this, "DNI/Telefono deben ser numericos.");
 }
+
+//---------------------------------------------------
+//-----------      crear Persona        -------------
+//---------------------------------------------------        
+        //un encendido para el while
+        boolean añadido = true;
+        while (añadido) {            
+            
+           
+      
+       //string a int
+       Integer eldni = Integer.valueOf(txtDni.getText());
+       //ciudad elegida
+       String ciudad = (String) cmbCiudad.getSelectedItem();
+       //numero
+       Integer celu = Integer.valueOf(txtTelefono.getText());
+       
+       Persona persona = new Persona(eldni,txtNombre.getText(),txtApellido.getText(),celu,ciudad,txtDomicilio.getText());
+            
+      NewJFrame.Personas.put(eldni,persona);
+                                     
+     }
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

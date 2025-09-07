@@ -18,6 +18,7 @@ import trabajon5.Jframe.Cliente.BorrarCliente;
 import trabajon5.Jframe.Cliente.BuscarCliente;
 import trabajon5.Jframe.Directorio.BuscarClientePorCiudad;
 import trabajon5.Jframe.Directorio.BuscarTelPorApellido;
+import trabajon5.Persona;
 
 /**
  *
@@ -40,11 +41,21 @@ public class NewJFrame extends javax.swing.JFrame {
     public static HashSet<Ciudad>ciudades = new HashSet<>();
     
     //Map
-    public static Map<String, String> Personas = new HashMap<>();
+    public static Map<Integer, Persona> Personas = new HashMap<>();
     
     //Tablas (van como Matriz String[][])
     public static String[][]Tablas;
     
+    
+    public void rellenarLasTablas(){
+    
+        for (Map.Entry<Integer, Persona> entry : Personas.entrySet()) {
+            Object key = entry.getKey();
+            Object val = entry.getValue();
+            
+        }
+        
+    }
     
     
     /**
@@ -187,13 +198,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        //hacer visible
         AgregarCliente internalCliente1 = new AgregarCliente();
         jDesktopPane1.add(internalCliente1);
         internalCliente1.setVisible(true);
         
-        
-        
-                
+    //------------------------------------------------
+    // Para que se actualizen las ciudades
+    //------------------------------------------------   
+    
       //el jcombobox es una lista de Strigs, se puede agregar de a uno o todos juntos.  
       JComboBox<String>ciudads = new JComboBox<>();
       
@@ -205,7 +218,7 @@ public class NewJFrame extends javax.swing.JFrame {
         
        //pongo el jcombobox elegido
         AgregarCliente.cmbCiudad.setModel(ciudads.getModel());
-        
+//     -------------------------------------------------  
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
