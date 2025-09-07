@@ -47,12 +47,25 @@ public class NewJFrame extends javax.swing.JFrame {
     //Tablas (van como Matriz String[][])
     public static String[][]Tablas;
     
-  
+    //lista simple
+    public static HashSet<Persona>PersonasLista = new HashSet<>();
     
     
+    //metodos a mano   
+    public static void cargarListaSimple(){
+    
+        for (Map.Entry<Integer, Persona> entry : Personas.entrySet()) {
+            Object key = entry.getKey();
+            Object val = entry.getValue();
+            
+            
+            PersonasLista.add(entry.getValue());
+        }
+    
+    }
     
     
-public static void rellenarLasTablas() {
+    public static void rellenarLasTablas() {
     
     //Le dio a la matrix un tamaño  
     String[][] Tablas = new String[Personas.size()][6];
