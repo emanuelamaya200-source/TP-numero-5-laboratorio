@@ -301,7 +301,7 @@ public class AgregarCliente extends javax.swing.JInternalFrame {
        //ciudad elegida
        String ciudad = (String) cmbCiudad.getSelectedItem();
        //numero
-       int celu = Integer.parseInt(txtTelefono.getText());
+       long celu = Long.parseLong(txtTelefono.getText());
        
        Persona persona = new Persona(eldni,txtNombre.getText(),txtApellido.getText(),celu,ciudad,txtDomicilio.getText());
             

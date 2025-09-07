@@ -7,12 +7,12 @@ public class Persona {
   int dni;
   String nombre;
   String apellido;
-  int numCelu;   
+  long numCelu;   
   String ciudad;
   String domicilio;
     
    //constructor completo  
-    public Persona(int dni, String nombre, String apellido, int numCelu, String ciudad, String domicilio) {
+    public Persona(int dni, String nombre, String apellido, long numCelu, String ciudad, String domicilio) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -64,11 +64,11 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public int getNumCelu() {
+    public long getNumCelu() {
         return numCelu;
     }
 
-    public void setNumCelu(int numCelu) {
+    public void setNumCelu(long numCelu) {
         this.numCelu = numCelu;
     }
 
