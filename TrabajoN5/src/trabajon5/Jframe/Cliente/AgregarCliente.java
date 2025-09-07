@@ -297,11 +297,11 @@ public class AgregarCliente extends javax.swing.JInternalFrame {
            
       
        //string a int
-       int eldni = Integer.valueOf(txtDni.getText());
+       int eldni = Integer.parseInt(txtDni.getText());
        //ciudad elegida
        String ciudad = (String) cmbCiudad.getSelectedItem();
        //numero
-       int celu = Integer.valueOf(txtTelefono.getText());
+       int celu = Integer.parseInt(txtTelefono.getText());
        
        Persona persona = new Persona(eldni,txtNombre.getText(),txtApellido.getText(),celu,ciudad,txtDomicilio.getText());
             
