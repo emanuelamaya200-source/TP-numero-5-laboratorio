@@ -244,72 +244,75 @@ public class AgregarCliente extends javax.swing.JInternalFrame {
 //----- corraborar si los campos estan vacios -------
 //---------------------------------------------------            
 
-//try {
-//  
-//    String dniTxt    = txtDni.getText().trim();
-//    String nombre    = txtNombre.getText().trim();
-//    String apellido  = txtApellido.getText().trim();
-//    String domicilio = txtDomicilio.getText().trim();
-//    String telTxt    = txtTelefono.getText().trim();
-//    String ciudad = cmbCiudad.getActionCommand();
-//       
-//    if (dniTxt.isEmpty() || nombre.isEmpty() || apellido.isEmpty()
-//            || ciudad.isEmpty() || domicilio.isEmpty() || telTxt.isEmpty()) {
-//        JOptionPane.showMessageDialog(this, "Completa todos los campos.");
-//        return;
-//    }
-//
-//   
-//    int  dni = Integer.parseInt(dniTxt);   
-//    long tel = Long.parseLong(telTxt);       
-//
-//    
-//    if (dni < 1_000_000 || dni > 99_999_999) { 
-//        JOptionPane.showMessageDialog(this, "DNI invalido (7 u 8 digitos).");
-//        txtDni.requestFocus();
-//        return;
-//    }
-//
-//   
+
+
+
+try {
+  
+    String dniTxt    = txtDni.getText().trim();
+    String nombre    = txtNombre.getText().trim();
+    String apellido  = txtApellido.getText().trim();
+    String domicilio = txtDomicilio.getText().trim();
+    String telTxt    = txtTelefono.getText().trim();
+    String ciudad = cmbCiudad.getActionCommand();
+       
+    if (dniTxt.isEmpty() || nombre.isEmpty() || apellido.isEmpty()
+            || ciudad.isEmpty() || domicilio.isEmpty() || telTxt.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Completa todos los campos.");
+        return;
+    }
+
+   
+    int  dni = Integer.parseInt(dniTxt);   
+    long tel = Long.parseLong(telTxt);       
+
+    
+    if (dni < 1_000_000 || dni > 99_999_999) { 
+        JOptionPane.showMessageDialog(this, "DNI invalido (7 u 8 digitos).");
+        txtDni.requestFocus();
+        return;
+    }
+
+   Persona persona = new Persona(dni, nombre, apellido, tel, ciudad, domicilio);
 //    Contacto nuevo = new Contacto(dni, nombre, apellido, ciudad, domicilio);
-//
-//    
-//    boolean ok = NewJFrame.DIRECTORIO.agregarContacto(tel, nuevo);
-//if (!ok) {
-//    JOptionPane.showMessageDialog(this, "Ese telefono ya existe.");
-//    return;
-//}
-//
-//JOptionPane.showMessageDialog(this, "Contacto guardado:");
-//     limpiarCampos();
-//
-//} catch (NumberFormatException ex) {
-//    JOptionPane.showMessageDialog(this, "DNI/Telefono deben ser numericos.");
-//}
+    
+    if (NewJFrame.Personas.containsKey(dni)) {
+        JOptionPane.showMessageDialog(this, "Ya existe un cliente con el DNI ");
+                return;
+    }
+    NewJFrame.Personas.put(dni, persona);
+    
+    JOptionPane.showMessageDialog(this, "Cliente guardado exitosamente.");
+            limpiarCampos();
+
+
+} catch (NumberFormatException ex) {
+    JOptionPane.showMessageDialog(this, "DNI/Telefono deben ser numericos.");
+}
 
 //---------------------------------------------------
 //-----------      crear Persona        -------------
 //---------------------------------------------------        
         //un encendido para el while
-        boolean añadido = true;
-        while (añadido) {            
-            
-           
-      
-       //string a int
-       int eldni = Integer.parseInt(txtDni.getText());
-       //ciudad elegida
-       String ciudad = (String) cmbCiudad.getSelectedItem();
-       //numero
-       long celu = Long.parseLong(txtTelefono.getText());
-       
-       Persona persona = new Persona(eldni,txtNombre.getText(),txtApellido.getText(),celu,ciudad,txtDomicilio.getText());
-            
-      NewJFrame.Personas.put(eldni,persona);
-      
-      añadido= false;
-                                     
-     }
+//        boolean añadido = true;
+//        while (añadido) {            
+//            
+//           
+//      
+//       //string a int
+//       int eldni = Integer.parseInt(txtDni.getText());
+//       //ciudad elegida
+//       String ciudad = (String) cmbCiudad.getSelectedItem();
+//       //numero
+//       long celu = Long.parseLong(txtTelefono.getText());
+//       
+//       Persona persona = new Persona(eldni,txtNombre.getText(),txtApellido.getText(),celu,ciudad,txtDomicilio.getText());
+//            
+//      NewJFrame.Personas.put(eldni,persona);
+//      
+//      añadido= false;
+//                                     
+//     }
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
