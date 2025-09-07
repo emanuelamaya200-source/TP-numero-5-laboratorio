@@ -1,11 +1,13 @@
 package trabajon5.Jframe.Ciudades;
 
+import java.util.HashSet;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import trabajon5.Ciudad;
 import trabajon5.Jframe.NewJFrame;
 
 public class AgregarCiudad extends javax.swing.JInternalFrame {
+    public static HashSet<Ciudad> ciudades = new HashSet<>();
 
     public AgregarCiudad() {
         initComponents();
@@ -94,14 +96,43 @@ public class AgregarCiudad extends javax.swing.JInternalFrame {
 
     private void btn_GuardarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarCiudadActionPerformed
        
-        //saco el texto escrito en el cuadrado en una variable
-        Ciudad laciudad = new Ciudad(txt_NomCiudad.getText());       
-                
-        //agrego una nueva ciudad
-        NewJFrame.ciudades.add(laciudad);
+//        //saco el texto escrito en el cuadrado en una variable
+//        Ciudad laciudad = new Ciudad(txt_NomCiudad.getText());       
+//                
+//        //agrego una nueva ciudad
+//        NewJFrame.ciudades.add(laciudad);
+//        
+    try {
+        // Obtenemos el texto del campo de texto
+        String nombreCiudad = txt_NomCiudad.getText();
+
+
+        if (!nombreCiudad.isEmpty()) {
+            // Creamos un nuevo objeto Ciudad
+            Ciudad laciudad = new Ciudad(nombreCiudad);
+
+
+          boolean ciudadAgregada = NewJFrame.ciudades.add(laciudad);
+          
+            if (ciudadAgregada) {
+                 JOptionPane.showMessageDialog(rootPane, "La ciudad ha sido agregada");
+                txt_NomCiudad.setText("");
+            }else{
+                 JOptionPane.showMessageDialog(rootPane, "La ciudad ya existe");
+            }
+
+        } else {
+
+             JOptionPane.showMessageDialog(rootPane, "Por favor, ingresa un nombre de ciudad.");  }
+    } catch (Exception e) {
+
+        System.err.println("Ocurrió un error al guardar la ciudad: " + e.getMessage());
+        e.printStackTrace();
+    }
+
         
-        //muestro mensaje de agregado
-        JOptionPane.showMessageDialog(rootPane, "agregado");
+
+//        JOptionPane.showMessageDialog(rootPane, "agregado");
         
     }//GEN-LAST:event_btn_GuardarCiudadActionPerformed
 

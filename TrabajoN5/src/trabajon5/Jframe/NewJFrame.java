@@ -46,6 +46,10 @@ public class NewJFrame extends javax.swing.JFrame {
     //Tablas (van como Matriz String[][])
     public static String[][]Tablas;
     
+  
+    
+    
+    
     
     public void rellenarLasTablas(){
     
@@ -56,6 +60,8 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         
     }
+    
+   
     
     
     /**
