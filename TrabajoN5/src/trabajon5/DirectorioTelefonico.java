@@ -49,9 +49,18 @@ public class DirectorioTelefonico {
         }
         return telefonos;
     }
-
+      //Borrar contacto desde el directorio.  
+public boolean borraContacto(Long telefono){
+    if (directorio.containsKey(telefono)) {
+        directorio.remove(telefono);
+        return  true;
         
-          
+        
+    }
+    return false;
+} 
+ //final       
+}          
  
 
     
@@ -67,4 +76,4 @@ public class DirectorioTelefonico {
 //
 //     
 //}
-}
+
