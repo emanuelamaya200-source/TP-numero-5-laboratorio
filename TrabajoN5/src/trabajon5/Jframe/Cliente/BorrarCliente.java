@@ -1,6 +1,7 @@
 package trabajon5.Jframe.Cliente;
 
 import java.awt.event.ActionEvent;
+import trabajon5.Jframe.NewJFrame;
 
 public class BorrarCliente extends javax.swing.JInternalFrame {
 
@@ -31,6 +32,11 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
         CuadroDniBus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CuadroDniBusActionPerformed(evt);
+            }
+        });
+        CuadroDniBus.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                CuadroDniBusKeyPressed(evt);
             }
         });
 
@@ -134,6 +140,13 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
     private void CuadroDniBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuadroDniBusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CuadroDniBusActionPerformed
+
+    private void CuadroDniBusKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CuadroDniBusKeyPressed
+   
+     //cuando se presione una tecla
+    NewJFrame.mostrarTablas();
+        
+    }//GEN-LAST:event_CuadroDniBusKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

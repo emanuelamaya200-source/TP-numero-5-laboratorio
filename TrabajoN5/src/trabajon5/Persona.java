@@ -87,7 +87,13 @@ public class Persona {
     public void setDomicilio(String domicilio) {
         this.domicilio = domicilio;
     }
+         
     
+    //tostring
+    @Override
+    public String toString() {
+        return "Persona{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", numCelu=" + numCelu + ", ciudad=" + ciudad + ", domicilio=" + domicilio + '}';
+    }
     
-//final    
+//final     
 }

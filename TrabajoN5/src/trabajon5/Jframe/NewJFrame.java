@@ -4,6 +4,7 @@
  */
 package trabajon5.Jframe;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -51,17 +52,40 @@ public class NewJFrame extends javax.swing.JFrame {
     
     
     
-    public void rellenarLasTablas(){
+public static void rellenarLasTablas() {
     
-        for (Map.Entry<Integer, Persona> entry : Personas.entrySet()) {
-            Object key = entry.getKey();
-            Object val = entry.getValue();
-            
-        }
-        
+    //Le dio a la matrix un tamaño  
+    String[][] Tablas = new String[Personas.size()][6];
+    
+    //creo un arraylist (es mas facil que manejar un map)
+    ArrayList<Persona> PersonasLista = new ArrayList<>(Personas.values());
+
+    for (int f = 0; f < PersonasLista.size(); f++) {
+        Persona per = PersonasLista.get(f);
+
+        Tablas[f][0] = String.valueOf(per.getDni());
+        Tablas[f][1] = per.getNombre();
+        Tablas[f][2] = per.getApellido();
+        Tablas[f][3] = String.valueOf(per.getNumCelu());
+        Tablas[f][4] = per.getCiudad();
+        Tablas[f][5] = per.getDomicilio();
     }
-    
-   
+
+//final rellenar tablas
+}    
+
+
+    public static void mostrarTablas() {
+        
+    //un doble for para f (filas) y c (columnas)    
+    for (int f = 0; f < Tablas.length; f++) {
+        for (int c = 0; c < Tablas[f].length; c++) {
+            System.out.print(Tablas[f][c] + " ");
+        }
+        System.out.println();
+    }
+}
+
     
     
     /**
@@ -242,12 +266,21 @@ public class NewJFrame extends javax.swing.JFrame {
         jDesktopPane1.add(internalCliente2);
         internalCliente2.setVisible(true);
         
+     //cargar tablas
+     NewJFrame.rellenarLasTablas();
+     NewJFrame.mostrarTablas();
+        
+        
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
 BorrarCliente internalBorrarCliente = new BorrarCliente();
 jDesktopPane1.add(internalBorrarCliente);
 internalBorrarCliente.setVisible(true);
+
+    //cargar tablas
+     NewJFrame.rellenarLasTablas();
+     NewJFrame.mostrarTablas();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
