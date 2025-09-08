@@ -52,23 +52,17 @@ public class NewJFrame extends javax.swing.JFrame {
     
     
     //metodos a mano   
-    public static void cargarListaSimple(){
-    
-        for (Map.Entry<Integer, Persona> entry : Personas.entrySet()) {
-            Object key = entry.getKey();
-            Object val = entry.getValue();
-            
-            
-            PersonasLista.add(entry.getValue());
-        }
-    
+    public static void cargarListaSimple() {
+    for (Persona per : Personas.values()) {
+        PersonasLista.add(per);
     }
+}
     
     
     public static void rellenarLasTablas() {
     
     //Le dio a la matrix un tamaño  
-    String[][] Tablas = new String[Personas.size()][6];
+    Tablas = new String[Personas.size()][6];
     
     //creo un arraylist (es mas facil que manejar un map)
     ArrayList<Persona> PersonasLista = new ArrayList<>(Personas.values());

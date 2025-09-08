@@ -254,7 +254,7 @@ try {
     String apellido  = txtApellido.getText().trim();
     String domicilio = txtDomicilio.getText().trim();
     String telTxt    = txtTelefono.getText().trim();
-    String ciudad = cmbCiudad.getActionCommand();
+    String ciudad = (String) cmbCiudad.getSelectedItem();
        
     if (dniTxt.isEmpty() || nombre.isEmpty() || apellido.isEmpty()
             || ciudad.isEmpty() || domicilio.isEmpty() || telTxt.isEmpty()) {
@@ -313,8 +313,9 @@ try {
 //      añadido= false;
 //                                     
 //     }
-
-
+    NewJFrame.rellenarLasTablas();
+    NewJFrame.mostrarTablas();
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
