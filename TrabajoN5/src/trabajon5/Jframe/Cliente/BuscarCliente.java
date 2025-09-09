@@ -3,6 +3,7 @@ package trabajon5.Jframe.Cliente;
 import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import trabajon5.Jframe.NewJFrame;
 import static trabajon5.Jframe.NewJFrame.Personas;
 import trabajon5.Persona;
@@ -12,7 +13,18 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
 
     public BuscarCliente() {
         initComponents();
+        rellenarListaClientes();
+
     }
+public void rellenarListaClientes() {
+    // Limpia el contenido actual del JTextArea
+    jTextArea1.setText("");
+    
+    // Itera sobre el mapa de personas y agrega cada una al JTextArea
+    for (Persona persona : NewJFrame.Personas.values()) {
+        jTextArea1.append(persona.getNumCelu() +" "+ persona.getApellido() + "\n");
+    }
+}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
