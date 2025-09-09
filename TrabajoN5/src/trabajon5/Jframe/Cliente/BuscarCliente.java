@@ -22,7 +22,7 @@ public void rellenarListaClientes() {
     
     // Itera sobre el mapa de personas y agrega cada una al JTextArea
     for (Persona persona : NewJFrame.Personas.values()) {
-        jTextArea1.append(persona.getNumCelu() +" "+ persona.getApellido() + "\n");
+        jTextArea1.append(persona.getNumCelu() + "\n");
     }
 }
 
