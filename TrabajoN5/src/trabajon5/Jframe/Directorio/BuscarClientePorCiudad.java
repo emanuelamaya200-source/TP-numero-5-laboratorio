@@ -1,10 +1,22 @@
 package trabajon5.Jframe.Directorio;
 
+import trabajon5.Ciudad;
+import static trabajon5.Jframe.Cliente.AgregarCliente.cmbCiudad;
+import trabajon5.Jframe.NewJFrame;
+
 public class BuscarClientePorCiudad extends javax.swing.JInternalFrame {
 
     public BuscarClientePorCiudad() {
         initComponents();
+        llenarCiudades();
     }
+    private void llenarCiudades() {
+    Cb_Ciudades.removeAllItems(); // Limpia la lista actual
+
+    for (Ciudad ciudad : NewJFrame.ciudades) {
+        Cb_Ciudades.addItem(ciudad.getNombre());
+    }
+}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -34,6 +46,13 @@ public class BuscarClientePorCiudad extends javax.swing.JInternalFrame {
         BCDDPC.setText("Buscar Clientes de Directorio por Ciudad");
 
         jLabel1.setText("Ciudades:");
+
+        Cb_Ciudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Cb_Ciudades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cb_CiudadesActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +107,10 @@ public class BuscarClientePorCiudad extends javax.swing.JInternalFrame {
         this.dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Cb_CiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cb_CiudadesActionPerformed
+        String ciudad = (String) Cb_Ciudades.getSelectedItem();
+    }//GEN-LAST:event_Cb_CiudadesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

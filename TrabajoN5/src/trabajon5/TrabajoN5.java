@@ -20,7 +20,6 @@ public class TrabajoN5 {
         
          NewJFrame gui = new NewJFrame();
         gui.setVisible(true);
-
     }
     
 }
