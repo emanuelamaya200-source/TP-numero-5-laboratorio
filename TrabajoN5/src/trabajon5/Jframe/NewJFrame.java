@@ -42,7 +42,7 @@ public class NewJFrame extends javax.swing.JFrame {
     public static HashSet<Ciudad>ciudades = new HashSet<>();
     
     //Map
-    public static Map<Integer, Persona> Personas = new HashMap<>();
+    public static Map<Long, Persona> Personas = new HashMap<>();
     
     //Tablas (van como Matriz String[][])
     public static String[][]Tablas;

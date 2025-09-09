@@ -280,7 +280,7 @@ try {
         JOptionPane.showMessageDialog(this, "Ya existe un cliente con el DNI ");
                 return;
     }
-    NewJFrame.Personas.put(dni, persona);
+    NewJFrame.Personas.put(tel, persona);
     
     JOptionPane.showMessageDialog(this, "Cliente guardado exitosamente.");
             limpiarCampos();
