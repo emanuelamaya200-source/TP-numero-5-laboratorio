@@ -1,8 +1,10 @@
 package trabajon5.Jframe.Directorio;
 
+import javax.swing.table.DefaultTableModel;
 import trabajon5.Ciudad;
 import static trabajon5.Jframe.Cliente.AgregarCliente.cmbCiudad;
 import trabajon5.Jframe.NewJFrame;
+import trabajon5.Persona;
 
 public class BuscarClientePorCiudad extends javax.swing.JInternalFrame {
 
@@ -11,7 +13,7 @@ public class BuscarClientePorCiudad extends javax.swing.JInternalFrame {
         llenarCiudades();
     }
     private void llenarCiudades() {
-    Cb_Ciudades.removeAllItems(); // Limpia la lista actual
+    Cb_Ciudades.removeAllItems(); 
 
     for (Ciudad ciudad : NewJFrame.ciudades) {
         Cb_Ciudades.addItem(ciudad.getNombre());
@@ -109,7 +111,34 @@ public class BuscarClientePorCiudad extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Cb_CiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cb_CiudadesActionPerformed
-        String ciudad = (String) Cb_Ciudades.getSelectedItem();
+         String ciudadSeleccionada = (String) Cb_Ciudades.getSelectedItem();
+
+  
+    if (ciudadSeleccionada == null) {
+        return;
+    }
+
+
+    String[] columnas = {"DNI", "Apellido", "Nombre", "Direccion", "Ciudad", "Telefono"};
+    DefaultTableModel modeloFiltrado = new DefaultTableModel(columnas, 0);
+
+
+    for (Persona persona : NewJFrame.Personas.values()) {
+        if (persona.getCiudad().equals(ciudadSeleccionada)) {
+            Object[] fila = new Object[6];
+            fila[0] = persona.getDni();
+            fila[1] = persona.getApellido();
+            fila[2] = persona.getNombre();
+            fila[3] = persona.getDomicilio();
+            fila[4] = persona.getCiudad();
+            fila[5] = persona.getNumCelu();
+            modeloFiltrado.addRow(fila);
+        }
+    }
+
+
+    Tabla_BCDDPC.setModel(modeloFiltrado);
+
     }//GEN-LAST:event_Cb_CiudadesActionPerformed
 
 
