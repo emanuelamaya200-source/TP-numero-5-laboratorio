@@ -2,6 +2,7 @@ package trabajon5.Jframe.Cliente;
 
 import java.util.ArrayList;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import trabajon5.Jframe.NewJFrame;
 import static trabajon5.Jframe.NewJFrame.Personas;
 import trabajon5.Persona;
@@ -47,8 +48,8 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
             }
         });
         busTel.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                busTelKeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                busTelKeyReleased(evt);
             }
         });
 
@@ -181,10 +182,6 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void busTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busTelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_busTelActionPerformed
-
     private void apeBuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apeBuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_apeBuActionPerformed
@@ -205,46 +202,40 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void busTelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busTelKeyPressed
-    //presionar tecla
-    NewJFrame.cargarListaSimple();
-    
-        //atributos a mostrar
-        String dni;
-        String nombre;
-        String apellido;
-        String ciudad;
-        String domicilio;   
-         
-        //celular pasado a int
-        Integer celnum = Integer.parseInt(busTel.getText());
-           
-        //for para buscar personas 
-        for (Persona per : NewJFrame.PersonasLista) {
-        
-       //comparar celu     
-       if(per.getNumCelu()==celnum){
-            
-             //dar valor
-             dni = String.valueOf(per.getDni());
-             nombre = per.getNombre();
-             apellido = per.getApellido();
-             ciudad = per.getCiudad();
-            domicilio = per.getDomicilio();
-            
-            
-            this.dniMostrar();
-            }           
-}   
-                      
-    }//GEN-LAST:event_busTelKeyPressed
+    private void busTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busTelActionPerformed
 
-    public void dniMostrar(){
-    for (Persona per : NewJFrame.PersonasLista){
-            String dni = String.valueOf(per.getDni());
-        dniBu.setText(dni);
+    private void busTelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busTelKeyReleased
+  
+     NewJFrame.cargarListaSimple();
+
+    try {
+        long celnum = Long.parseLong(busTel.getText().trim());
+
+        for (Persona per : NewJFrame.PersonasLista) {
+            if (per.getNumCelu() == celnum) {
+                dniBu.setText(String.valueOf(per.getDni()));
+                nomBu.setText(per.getNombre());
+                apeBu.setText(per.getApellido());
+                ciuBu.setText(per.getCiudad());
+                domBu.setText(per.getDomicilio());
+                break;
+            }
         }
-    }
+    } catch (NumberFormatException ex) {
+        //limpiar los textos
+        dniBu.setText("");
+        nomBu.setText("");
+        apeBu.setText("");
+        ciuBu.setText("");
+        domBu.setText("");
+        
+    }           
+    
+    }//GEN-LAST:event_busTelKeyReleased
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField apeBu;

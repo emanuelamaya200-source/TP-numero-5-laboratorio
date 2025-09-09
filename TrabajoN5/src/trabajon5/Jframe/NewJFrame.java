@@ -53,6 +53,8 @@ public class NewJFrame extends javax.swing.JFrame {
     
     //metodos a mano   
     public static void cargarListaSimple() {
+    //limpia siempre que se carga    
+    PersonasLista.clear();    
     for (Persona per : Personas.values()) {
         PersonasLista.add(per);
     }

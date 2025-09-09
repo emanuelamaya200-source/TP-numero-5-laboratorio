@@ -290,29 +290,7 @@ try {
     JOptionPane.showMessageDialog(this, "DNI/Telefono deben ser numericos.");
 }
 
-//---------------------------------------------------
-//-----------      crear Persona        -------------
-//---------------------------------------------------        
-        //un encendido para el while
-//        boolean añadido = true;
-//        while (añadido) {            
-//            
-//           
-//      
-//       //string a int
-//       int eldni = Integer.parseInt(txtDni.getText());
-//       //ciudad elegida
-//       String ciudad = (String) cmbCiudad.getSelectedItem();
-//       //numero
-//       long celu = Long.parseLong(txtTelefono.getText());
-//       
-//       Persona persona = new Persona(eldni,txtNombre.getText(),txtApellido.getText(),celu,ciudad,txtDomicilio.getText());
-//            
-//      NewJFrame.Personas.put(eldni,persona);
-//      
-//      añadido= false;
-//                                     
-//     }
+
     NewJFrame.rellenarLasTablas();
     NewJFrame.mostrarTablas();
     
